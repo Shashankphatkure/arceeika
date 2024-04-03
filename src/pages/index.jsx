@@ -15,26 +15,36 @@ import BlogArea from "@/components/blog/electronic/blog-area";
 import InstagramArea from "@/components/instagram/instagram-area";
 import CtaArea from "@/components/cta/cta-area";
 import Footer from "@/layout/footers/footer";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <Wrapper>
-      <SEO pageTitle='Home'/>
-      <Header/>
-      <HomeHeroSlider/>
-      <ElectronicCategory/>
-      <FeatureArea/>
-      <ProductArea/>
-      <BannerArea/>
-      <OfferProducts/>
-      <ProductGadgetArea/>
-      <ProductBanner/>
-       <NewArrivals/>
-      <ProductSmArea/>
-      <BlogArea/>
-      <InstagramArea/>
-      <CtaArea/>
-      <Footer/>
+      {/* <SEO pageTitle="Home" />
+      <Header />
+      <HomeHeroSlider />
+      <ElectronicCategory />
+      <FeatureArea />
+      <ProductArea />
+      <BannerArea />
+      <OfferProducts />
+      <ProductGadgetArea />
+      <ProductBanner />
+      <NewArrivals />
+      <ProductSmArea />
+      <BlogArea />
+      <InstagramArea />
+      <CtaArea />
+      <Footer /> */}
+
+      <div>
+        <Image
+          src="/banner.png" // Path to the image file
+          alt="Banner Image" // Alt text for the image
+          layout="fill" // Make the image fill its parent container
+          objectFit="cover" // Control how the image should be resized
+        />
+      </div>
     </Wrapper>
-  )
+  );
 }
