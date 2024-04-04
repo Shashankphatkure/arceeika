@@ -20,7 +20,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <Wrapper>
-      <SEO pageTitle="Home" />
+      {/* <SEO pageTitle="Home" />
       <Header />
       <HomeHeroSlider />
       <ElectronicCategory />
@@ -35,16 +35,16 @@ export default function Home() {
       <BlogArea />
       <InstagramArea />
       <CtaArea />
-      <Footer />
+      <Footer /> */}
 
-      {/* <div>
+      <div>
         <Image
           src="/banner.png" // Path to the image file
           alt="Banner Image" // Alt text for the image
           layout="fill" // Make the image fill its parent container
           objectFit="cover" // Control how the image should be resized
         />
-      </div> */}
+      </div>
     </Wrapper>
   );
 }
