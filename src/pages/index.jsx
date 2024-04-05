@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import SEO from "@/components/seo";
 import Wrapper from "@/layout/wrapper";
 import Header from "@/layout/headers/header";
@@ -18,6 +19,19 @@ import Footer from "@/layout/footers/footer";
 import Image from "next/image";
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Assuming 768px as the breakpoint for mobile
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call the function initially to set the state based on the initial screen size
+
+    return () => window.removeEventListener("resize", handleResize); // Cleanup on component unmount
+  }, []);
+
   return (
     <Wrapper>
       {/* <SEO pageTitle="Home" />
@@ -37,14 +51,24 @@ export default function Home() {
       <CtaArea />
       <Footer /> */}
 
-      <div>
-        <Image
-          src="/banner.png" // Path to the image file
-          alt="Banner Image" // Alt text for the image
-          layout="fill" // Make the image fill its parent container
-          objectFit="cover" // Control how the image should be resized
+      {isMobile ? (
+        <video
+          src="/arceeika.mp4"
+          autoPlay
+          loop
+          muted
+          style={{ width: "100%", height: "100vh", objectFit: "cover" }}
         />
-      </div>
+      ) : (
+        <div>
+          <Image
+            src="/banner.png" // Path to the image file
+            alt="Banner Image" // Alt text for the image
+            layout="fill" // Make the image fill its parent container
+            objectFit="cover" // Control how the image should be resized
+          />
+        </div>
+      )}
     </Wrapper>
   );
 }
