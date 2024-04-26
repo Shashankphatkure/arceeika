@@ -60,12 +60,22 @@ export default function Home() {
           style={{ width: "100%", height: "100vh", objectFit: "cover" }}
         />
       ) : (
-        <div>
+        <div style={{ height: "100vh", position: "relative" }}>
           <Image
             src="/banner.png" // Path to the image file
             alt="Banner Image" // Alt text for the image
-            layout="fill" // Make the image fill its parent container
+            layout="responsive" // Make the image scale to fit its container
             objectFit="cover" // Control how the image should be resized
+            width={1920}
+            height={1080}
+          />
+          <Image
+            src="/acbanner.jpg" // Path to the image file
+            alt="AC Banner Image" // Alt text for the image
+            layout="responsive" // Make the image scale to fit its container
+            objectFit="cover" // Control how the image should be resized
+            width={1920}
+            height={1080}
           />
         </div>
       )}
